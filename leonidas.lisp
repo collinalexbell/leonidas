@@ -64,13 +64,20 @@
 (defun code ()
   (format t "PR on a github issue"))
 
+(defun ranger ()
+  (format t "Go range across the land with zeus"))
+
 (defun menu ()
   (format t "0) workout~%")
+  (format t "1) code~%")
+  (format t "2) ranger~%")
   (format t "enter a choice: ")
   (let ((choice (read-line)))
     (switch (choice :test #'equal)
       ("0" (workout))
-      ("1" (code)))))
+      ("1" (code))
+      ("2" (ranger))
+      )))
 
 (defun leonidas ()
   (ascii-logo)
