@@ -64,12 +64,20 @@
 (defun code ()
   (format t "PR on a github issue"))
 
-(defun ranger ()
+(defun ranger-exersize ()
   (format t "Go range across the land with zeus"))
 
+
 (defparameter menu `(('workout ,#'workout)
-               ('code ,#'code)
-               ('ranger ,#'ranger)))
+                     ('code ,#'code)
+                     ('ranger-exersize ,#'ranger-exersize)
+                     ('random-choice ,#'random-choice)))
+
+(defun random-choice ()
+  (format t "random choice!!?!~%")
+  (let ((selection (random-elt menu)))
+    (format t "You chose ~s~%" (car selection))
+    (funcall (cadr selection))))
 
 (defun menu ()
   (loop for i upto (- (length menu) 1)
