@@ -67,17 +67,17 @@
 (defun ranger ()
   (format t "Go range across the land with zeus"))
 
+(defparameter menu `(('workout ,#'workout)
+               ('code ,#'code)
+               ('ranger ,#'ranger)))
+
 (defun menu ()
-  (format t "0) workout~%")
-  (format t "1) code~%")
-  (format t "2) ranger~%")
+  (loop for i upto (- (length menu) 1)
+        do
+           (format t "~d) ~s~%" i (car (elt menu i))))
   (format t "enter a choice: ")
-  (let ((choice (read-line)))
-    (switch (choice :test #'equal)
-      ("0" (workout))
-      ("1" (code))
-      ("2" (ranger))
-      )))
+  (let ((choice (parse-integer (read-line))))
+    (funcall (cadr (elt menu choice)))))
 
 (defun leonidas ()
   (ascii-logo)
