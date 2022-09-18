@@ -67,18 +67,16 @@
 (defun ranger-exersize ()
   (format t "Go range across the land with zeus"))
 
-
-(defparameter menu `(('workout ,#'workout)
-                     ('code ,#'code)
-                     ('ranger-exersize ,#'ranger-exersize)
-                     ('random-choice ,#'random-choice)))
-
 (defun random-choice ()
   (format t "random choice!!?!~%")
   (let ((selection (random-elt menu)))
     (format t "You chose ~s~%" (car selection))
     (funcall (cadr selection))))
 
+(defparameter menu `(('workout ,#'workout)
+                     ('code ,#'code)
+                     ('ranger-exersize ,#'ranger-exersize)
+                     ('random-choice ,#'random-choice)))
 (defun menu ()
   (loop for i upto (- (length menu) 1)
         do
