@@ -73,10 +73,12 @@
     (format t "You chose ~s~%" (car selection))
     (funcall (cadr selection))))
 
+
 (defparameter menu `(('workout ,#'workout)
                      ('code ,#'code)
                      ('ranger-exersize ,#'ranger-exersize)
                      ('random-choice ,#'random-choice)))
+
 (defun menu ()
   (loop for i upto (- (length menu) 1)
         do
