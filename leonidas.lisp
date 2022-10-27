@@ -59,10 +59,23 @@
   (format t "and welcome to Sparta~%"))
 
 (defun workout ()
-  (format t "do 10 pushups"))
+  (let ((n (random 20)))
+    (format t "Today's workout is ~d~%" n)
+  (let ((n (random 20)))
+    (format t "You will do ~d pushups~%" n)
+  (let ((n (random 20)))
+    (format t "You will do ~d situps~%" n)
+  (let ((n (random 20)))
+    (format t "You will do ~d squats~%" n)))
 
 (defun code ()
-  (format t "PR on a github issue"))
+  ;; pick a random number between 1 and 3 and depending on the number call a function
+  (let ((n (random 3)))
+    (cond ((= n 0) ("Review a PR"))
+          ((= n 1) ("PR on a github issue")
+          ((= n 2)
+            (let ((x (random 1000))))
+              (format t "You will write ~d lines of code~%" x)))))
 
 (defun ranger-exersize ()
   (format t "Go range across the land with zeus"))
