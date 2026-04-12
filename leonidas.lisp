@@ -61,6 +61,9 @@
 (defun workout ()
   (format t "do 10 pushups"))
 
+(defun art ()
+  (format t "go paint"))
+
 (defun code ()
   (format t "PR on a github issue"))
 
